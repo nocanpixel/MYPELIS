@@ -11,8 +11,8 @@ router.get('/', function(req, res) {
             });
         }
         console.log(popular);
-        res.render('index');
-    })
+        res.render('index', { popular, style: 'main' });
+    });
 });
 
 
