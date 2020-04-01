@@ -10,8 +10,15 @@ router.get('/', function(req, res) {
                 message: 'Not able to query the database'
             });
         }
-        console.log(popular);
-        res.render('index', { popular, style: 'main' });
+        console.log(popular[0]);
+        res.render('index', { 
+            row1:popular[0],
+            row2:popular[1],
+            row3:popular[2],
+            row4:popular[3],
+            row5:popular[4],
+            row6:popular[5],
+             style: 'main'});
     });
 });
 
