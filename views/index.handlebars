@@ -12,28 +12,74 @@
 	  {{/with}}
 
 	  	  	<div class="contentD">
+			<div class="containerContent">
 			<div class="descripcion">
 				{{#with row1}}
 				<h1 class="title">{{nombre_pelicula}}</h1>
+				<div class="statusP">
+					<span class="material-icons eyeP">remove_red_eye</span>
+					<p class="eyeE"> {{numero_vistas}} </p>
+					<span class="badge badge-secondary">PELICULA</span>
+					<p class="dateP">{{fecha_pelicula}}</p>
+					<button class="heart"><span class="material-icons">favorite_border</span></button>
+				</div>
 				<p class="descripcionP">{{descripcion_pelicula}}</p>
-				<p class="generoP">Genero : {{genero_pelicula}} </p>
-				<p class="directorP">Director : {{director_pelicula}} </p>
-				<p class="elencoP">Elenco : {{reparto_pelicula}} </p>
+
 				{{/with}}
 				<a href="" class="verP">Ver pelicula</a>
 			</div>
 		</div>
-
+	  </div>
     </div>
     <div class="carousel-item">
 		{{#with row2}}
       <img class="d-block w-100" src="{{ruta_img}}" alt="Second slide">
 	  {{/with}}
+
+	  	  	<div class="contentD">
+			<div class="containerContent">
+			<div class="descripcion">
+				{{#with row2}}
+				<h1 class="title">{{nombre_pelicula}}</h1>
+				<div class="statusP">
+					<span class="material-icons eyeP">remove_red_eye</span>
+					<p class="eyeE"> {{numero_vistas}} </p>
+					<span class="badge badge-secondary">PELICULA</span>
+					<p class="dateP">{{fecha_pelicula}}</p>
+					<button class="heart"><span class="material-icons">favorite_border</span></button>
+				</div>
+				<p class="descripcionP">{{descripcion_pelicula}}</p>
+				{{/with}}
+				<a href="" class="verP">Ver pelicula</a>
+			</div>
+			
+		</div>
+	  </div>
     </div>
     <div class="carousel-item">
 		{{#with row3}}
       <img class="d-block w-100" src="{{ruta_img}}" alt="Third slide">
 	  {{/with}}
+
+	  	  	<div class="contentD">
+			<div class="containerContent">
+			<div class="descripcion">
+				{{#with row3}}
+				<h1 class="title">{{nombre_pelicula}}</h1>
+				<div class="statusP">
+					<span class="material-icons eyeP">remove_red_eye</span>
+					<p class="eyeE"> {{numero_vistas}} </p>
+					<span class="badge badge-secondary">PELICULA</span>
+					<p class="dateP">{{fecha_pelicula}}</p>
+					<button class="heart"><span class="material-icons">favorite_border</span></button>
+				</div>
+				<p class="descripcionP">{{descripcion_pelicula}}</p>
+
+				{{/with}}
+				<a href="" class="verP">Ver pelicula</a>
+			</div>
+		</div>
+	  </div>
     </div>
   </div>
 

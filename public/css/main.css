@@ -70,11 +70,14 @@ html, body {
   color: white;
 }
 
+.material-icons:hover {
+  color: #ff942a;
+}
+
 .themodal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  z-index: 990; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -88,7 +91,6 @@ html, body {
 
 .modal-content {
   margin: auto;
-  padding: 20px;
   width: 100%;
   background: transparent;
   border: none;
@@ -96,8 +98,8 @@ html, body {
 
 .closeC {
   position: absolute;
-  left: 70%;
-  top: 34%;
+  left: 88%;
+  top: 30%;
   cursor: pointer;
 }
 
@@ -105,17 +107,21 @@ html, body {
   /* Remove First */
   -webkit-appearance: none;
   -moz-appearance: none;
-  margin: 0 auto;
+  margin: 10px 10px 10px 5.5%;
   appearance: none;
-  width: 50%;
+  width: 88%;
   height: 60px;
   background: transparent;
   color: white;
   padding: 10px;
-  border: 2px #ff942a solid;
-  text-align: center;
-  font-size: 30px;
+  padding-left: 30px;
+  border: 2px white solid;
+  font-size: 20px;
   font-weight: lighter;
+}
+
+.modal-content input[type=text]:focus {
+  border: 2px solid #ff942a;
 }
 
 button {
@@ -129,15 +135,6 @@ button {
 
 
 
-@media only screen and (min-width: 100em) {
-  .containerH {
-    max-width: 1700px;
-  }
-
-}
-
-
-
 /*//////****************** SLIDER CSS
 */
 
@@ -146,25 +143,94 @@ button {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
-  top: 30%;
-  left: 5.1%;
+  top: 60%;
   color: white;
 
+}
+
+.containerContent {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 0 1rem;
 }
 
 .descripcion {
   width: 600px;
   text-align: inherit;
+  float: left;
+}
+
+.statusP {
+  width: 600px;
+  float: left;
+}
+
+.eyeP {
+  font-size: 15px;
+  float: left;
+  margin-top: 2px;
+  margin-right: 7px;
+}
+
+.eyeE {
+ float: left;
+ font-size: 12px;
+ margin-right: 7px;
+}
+
+.heart {
+  float: left;
+  margin-top: -2px;
+}
+
+.heart span {
+  font-size: 16px;
+}
+
+.dateP {
+  float: left;
+  font-size: 12px;
+  margin-right: 7px;
+}
+.badge {
+  float: left;
+  background: transparent;
+  border: 1px solid white;
+  font-size: 10px;
+  margin-right: 7px;
+}
+
+.eyeP:hover {
+  color: white;
+} 
+
+.heart span:hover {
+  color: red;
+}
+
+.heart:focus {
+  color: transparent;
+}
+
+button:focus {
+  outline:0;
+}
+
+.heart:active {
+  color: transparent;
 }
 
 .title {
   font-weight: bolder;
-  font-size: 50px;
+  font-size: 2em;
   text-shadow: 3px 3px 3px black;
 }
 .descripcionP {
-  margin-bottom: 40px;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 2px black;
 }
+
+
 .verP {
   height: 40px;
   padding: 8px 35px 8px;
@@ -216,7 +282,10 @@ button {
   .container {
     max-width: 1700px;
   }
-  .contentD {
+  .containerContent {
+    max-width: 1700px;
+  }
+  .containerH {
     max-width: 1700px;
   }
 }
@@ -238,14 +307,24 @@ button {
 
   .modal-content input[type=text] {
     width: 100%;
+    background: transparent;
+    margin: initial;
+    border-radius: 0px;
+    border: 2px solid red;
+    padding-left: 40px;
+    font-size: 17px;
   }
 
   .closeC {
-    left: 87%;
+    left: 90%;
   }
 
   .descripcion {
-    width: 80%;
+    width: 92%;
     font-size: 15px;
+  }
+
+  .contentD {
+    top: 25%;
   }
 }
