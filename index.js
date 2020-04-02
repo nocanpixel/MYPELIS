@@ -13,7 +13,7 @@ const port = process.env.PORT || 8080;
 
 
 //Middlewares
-app.use(express.static('public'));
+app.use(express.static(process.cwd() + "/public"));
 app.use(bodyParser.urlencoded({ extended:false}));
 app.use(bodyParser.json());
 app.use(methodOverride('_method'));
@@ -28,18 +28,52 @@ app.set('view engine', 'handlebars');
 //Routing
 app.use('/', routes);
 
+var count = 0;
+
+var $ipsConnected = [];
+
+io.sockets.on('connection', newConnection);
+
+function newConnection(socket) {
+
+    /* Connected socket */
+    var $ipAddress = socket.handshake.address;
+
+    if (!$ipsConnected.hasOwnProperty($ipAddress)) {
+  
+        $ipsConnected[$ipAddress] = 1;
+  
+        count++;
+  
+        io.emit('counter',{count:count});
+  
+    }
+    
+    console.log('/////// - CLIENTS - ///////')
+    console.log("* A new client is connected");
+    console.log('client IP : ', $ipAddress);
+    console.log('client SOCKET : ', socket.id);
+    console.log('///////////////////////////');  
+    /* Disconnect socket */
+  
+    socket.on('disconnect', function() {
+  
+        if ($ipsConnected.hasOwnProperty($ipAddress)) {
+  
+            delete $ipsConnected[$ipAddress];
+  
+          count--;
+  
+          io.emit('counter',{count:count});
+  
+        }
+        console.log('Disconnected',count);
+  
+    });
+
+}
 
 //My Server
-
-io.on('connection', function(socket){
-
-    console.log('a user connected');
-
-    socket.on('disconnect', function() {
-        console.log('user disconnected');
-    });
-    
-});
 
 console.log('--Mypelis-- Peliculas para todos');
 console.log(`Listening on port ${port}`);

@@ -1,3 +1,4 @@
+{{> handler}}
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -19,14 +20,15 @@
 				<div class="statusP">
 					<span class="material-icons eyeP">remove_red_eye</span>
 					<p class="eyeE"> {{numero_vistas}} </p>
-					<span id="counter" class="badge badge-secondary"></span>
+					<span class="badge badge-secondary">PELICULA</span>
 					<p class="dateP">{{fecha_pelicula}}</p>
 					<button class="heart"><span class="material-icons">favorite_border</span></button>
 				</div>
 				<p class="descripcionP">{{descripcion_pelicula}}</p>
 
+				
+				<a href="/pelicula?id={{id_pelicula}}" id="id" class="verP" data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">Ver pelicula</a>
 				{{/with}}
-				<a href="" class="verP">Ver pelicula</a>
 			</div>
 		</div>
 	  </div>
@@ -49,8 +51,8 @@
 					<button class="heart"><span class="material-icons">favorite_border</span></button>
 				</div>
 				<p class="descripcionP">{{descripcion_pelicula}}</p>
+				<a href="/pelicula?id={{id_pelicula}}" id="id" class="verP" data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">Ver pelicula</a>
 				{{/with}}
-				<a href="" class="verP">Ver pelicula</a>
 			</div>
 			
 		</div>
@@ -75,8 +77,8 @@
 				</div>
 				<p class="descripcionP">{{descripcion_pelicula}}</p>
 
+				<a href="/pelicula?id={{id_pelicula}}" id="id" class="verP" data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">Ver pelicula</a>
 				{{/with}}
-				<a href="" class="verP">Ver pelicula</a>
 			</div>
 		</div>
 	  </div>
@@ -86,7 +88,10 @@
 
 </div>
 <div class="container">
-	<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam provident consequatur id voluptatem est necessitatibus eligendi, reiciendis saepe molestiae, autem alias vero enim! Reprehenderit, incidunt! Officiis deserunt vitae natus voluptatem?
+	<p>a</p>
+	<p>a</p>
+	<p><h1>Conter : <span id="counter"></span></h1></p>
+	<p></p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam provident consequatur id voluptatem est necessitatibus eligendi, reiciendis saepe molestiae, autem alias vero enim! Reprehenderit, incidunt! Officiis deserunt vitae natus voluptatem?
 	Iste officiis facere, omnis doloribus itaque incidunt non autem dolor. Doloribus, ea repellat. Architecto rerum ratione, eligendi doloremque ut pariatur, deserunt vel iure, non modi dolor dicta facere sed? Iusto!
 	Hic deleniti a at aspernatur placeat explicabo modi qui minima, itaque minus quos maxime dolore ex autem repellendus iusto, incidunt vitae id! Omnis vitae in saepe et. Expedita, molestiae minus.
 	Molestias nostrum ut molestiae quibusdam rem aperiam officiis, facilis fugit eaque cupiditate necessitatibus commodi! Possimus ut fugiat odit facilis dolorem. Iure laudantium harum eum consequuntur, culpa nam veritatis necessitatibus minus.
@@ -142,6 +147,7 @@
 	var socket = io.connect('http://localhost:8080/');
 
 	socket.on('counter', function(data) {
-		$('#counter').text(data.count);
+		console.log(data);
+		socket.emit($('#counter').text(data.count));
 	})
 </script>
