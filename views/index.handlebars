@@ -19,7 +19,7 @@
 				<div class="statusP">
 					<span class="material-icons eyeP">remove_red_eye</span>
 					<p class="eyeE"> {{numero_vistas}} </p>
-					<span class="badge badge-secondary">PELICULA</span>
+					<span id="counter" class="badge badge-secondary"></span>
 					<p class="dateP">{{fecha_pelicula}}</p>
 					<button class="heart"><span class="material-icons">favorite_border</span></button>
 				</div>
@@ -137,3 +137,11 @@
 	Quibusdam repellendus quod delectus consequuntur nulla blanditiis ipsa autem, atque sequi, ea vero maxime iusto velit! Impedit, vel iure officia rerum recusandae incidunt! Nihil neque provident fugit, aliquid beatae itaque!
 	Ad molestias totam quis sunt voluptatum adipisci repellendus fugit cum minus quasi labore expedita doloribus debitis, repudiandae fugiat corrupti harum molestiae numquam quo dolorem dicta illum tempora eius iure? A.</p>
 </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+<script>
+	var socket = io.connect('http://localhost:8080/');
+
+	socket.on('counter', function(data) {
+		$('#counter').text(data.count);
+	})
+</script>
