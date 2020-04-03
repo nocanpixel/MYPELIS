@@ -1,153 +1,293 @@
 {{> handler}}
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-		{{#with row1}}
-      <img class="d-block w-100" src="{{ruta_img}}">
+	<ol class="carousel-indicators">
+		<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+		<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+		<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+	</ol>
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			{{#with row1}}
+			<img class="d-block w-100 thumbnail" data-parallax='{"y": -230}' src="{{ruta_img}}">
 
-	  {{/with}}
+			{{/with}}
 
-	  	  	<div class="contentD">
-			<div class="containerContent">
-			<div class="descripcion">
-				{{#with row1}}
-				<h1 class="title">{{nombre_pelicula}}</h1>
-				<div class="statusP">
-					<span class="material-icons eyeP">remove_red_eye</span>
-					<p class="eyeE"> {{numero_vistas}} </p>
-					<span class="badge badge-secondary">PELICULA</span>
-					<p class="dateP">{{fecha_pelicula}}</p>
-					<button class="heart"><span class="material-icons">favorite_border</span></button>
+			<div class="contentD">
+				<div class="containerContent">
+					<div class="descripcion">
+						{{#with row1}}
+						<h1 class="title">{{nombre_pelicula}}</h1>
+						<div class="statusP">
+							<span class="material-icons eyeP">remove_red_eye</span>
+							<p class="eyeE"> {{numero_vistas}} </p>
+							<span class="badge badge-secondary">PELICULA</span>
+							<p class="dateP">{{fecha_pelicula}}</p>
+							<button class="heart"><span class="material-icons">favorite_border</span></button>
+						</div>
+						<p class="descripcionP">{{descripcion_pelicula}}</p>
+
+
+						<a href="/pelicula?nombre_pelicula={{nombre_pelicula}}" id="nombre_pelicula" class="verP"
+							data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">Ver pelicula</a>
+						{{/with}}
+					</div>
 				</div>
-				<p class="descripcionP">{{descripcion_pelicula}}</p>
-
-				
-				<a href="/pelicula?id={{id_pelicula}}" id="id" class="verP" data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">Ver pelicula</a>
-				{{/with}}
 			</div>
 		</div>
-	  </div>
-    </div>
-    <div class="carousel-item">
-		{{#with row2}}
-      <img class="d-block w-100" src="{{ruta_img}}" alt="Second slide">
-	  {{/with}}
+		<div class="carousel-item">
+			{{#with row2}}
+			<img class="d-block w-100 thumbnail" data-parallax='{"y": -230}' src="{{ruta_img}}" alt="Second slide">
+			{{/with}}
 
-	  	  	<div class="contentD">
-			<div class="containerContent">
-			<div class="descripcion">
-				{{#with row2}}
-				<h1 class="title">{{nombre_pelicula}}</h1>
-				<div class="statusP">
-					<span class="material-icons eyeP">remove_red_eye</span>
-					<p class="eyeE"> {{numero_vistas}} </p>
-					<span class="badge badge-secondary">PELICULA</span>
-					<p class="dateP">{{fecha_pelicula}}</p>
-					<button class="heart"><span class="material-icons">favorite_border</span></button>
+			<div class="contentD">
+				<div class="containerContent">
+					<div class="descripcion">
+
+						{{#with row2}}
+						<h1 class="title">{{nombre_pelicula}}</h1>
+						<div class="statusP">
+							<span class="material-icons eyeP">remove_red_eye</span>
+							<p class="eyeE"> {{numero_vistas}} </p>
+							<span class="badge badge-secondary">PELICULA</span>
+							<p class="dateP">{{fecha_pelicula}}</p>
+							<button class="heart"><span class="material-icons">favorite_border</span></button>
+						</div>
+						<p class="descripcionP">{{descripcion_pelicula}}</p>
+						<a href="/pelicula?nombre_pelicula={{nombre_pelicula}}" id="nombre_pelicula" class="verP"
+							data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">Ver pelicula</a>
+						{{/with}}
+					</div>
+
 				</div>
-				<p class="descripcionP">{{descripcion_pelicula}}</p>
-				<a href="/pelicula?id={{id_pelicula}}" id="id" class="verP" data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">Ver pelicula</a>
-				{{/with}}
-			</div>
-			
-		</div>
-	  </div>
-    </div>
-    <div class="carousel-item">
-		{{#with row3}}
-      <img class="d-block w-100" src="{{ruta_img}}" alt="Third slide">
-	  {{/with}}
-
-	  	  	<div class="contentD">
-			<div class="containerContent">
-			<div class="descripcion">
-				{{#with row3}}
-				<h1 class="title">{{nombre_pelicula}}</h1>
-				<div class="statusP">
-					<span class="material-icons eyeP">remove_red_eye</span>
-					<p class="eyeE"> {{numero_vistas}} </p>
-					<span class="badge badge-secondary">PELICULA</span>
-					<p class="dateP">{{fecha_pelicula}}</p>
-					<button class="heart"><span class="material-icons">favorite_border</span></button>
-				</div>
-				<p class="descripcionP">{{descripcion_pelicula}}</p>
-
-				<a href="/pelicula?id={{id_pelicula}}" id="id" class="verP" data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">Ver pelicula</a>
-				{{/with}}
 			</div>
 		</div>
-	  </div>
-    </div>
-  </div>
+		<div class="carousel-item">
+			{{#with row3}}
+			<img class="d-block w-100 thumbnail" data-parallax='{"y": -230}' src="{{ruta_img}}" alt="Third slide">
+			{{/with}}
+
+			<div class="contentD">
+				<div class="containerContent">
+					<div class="descripcion">
+						{{#with row3}}
+						<h1 class="title">{{nombre_pelicula}}</h1>
+						<div class="statusP">
+							<span class="material-icons eyeP">remove_red_eye</span>
+							<p class="eyeE"> {{numero_vistas}} </p>
+							<span class="badge badge-secondary">PELICULA</span>
+							<p class="dateP">{{fecha_pelicula}}</p>
+							<button class="heart"><span class="material-icons">favorite_border</span></button>
+						</div>
+						<p class="descripcionP">{{descripcion_pelicula}}</p>
+
+						<a href="/pelicula?nombre_pelicula={{nombre_pelicula}}" id="nombre_pelicula" class="verP"
+							data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">Ver pelicula</a>
+						{{/with}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 </div>
-<div class="container">
-	<p>a</p>
-	<p>a</p>
-	<p><h1>Conter : <span id="counter"></span></h1></p>
-	<p></p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam provident consequatur id voluptatem est necessitatibus eligendi, reiciendis saepe molestiae, autem alias vero enim! Reprehenderit, incidunt! Officiis deserunt vitae natus voluptatem?
-	Iste officiis facere, omnis doloribus itaque incidunt non autem dolor. Doloribus, ea repellat. Architecto rerum ratione, eligendi doloremque ut pariatur, deserunt vel iure, non modi dolor dicta facere sed? Iusto!
-	Hic deleniti a at aspernatur placeat explicabo modi qui minima, itaque minus quos maxime dolore ex autem repellendus iusto, incidunt vitae id! Omnis vitae in saepe et. Expedita, molestiae minus.
-	Molestias nostrum ut molestiae quibusdam rem aperiam officiis, facilis fugit eaque cupiditate necessitatibus commodi! Possimus ut fugiat odit facilis dolorem. Iure laudantium harum eum consequuntur, culpa nam veritatis necessitatibus minus.
-	Officia repudiandae iusto cumque quo odio suscipit voluptatibus aut, dicta aperiam dolorum voluptas perferendis, temporibus consectetur voluptates asperiores blanditiis accusamus minima aspernatur? Mollitia at molestiae laudantium autem officia explicabo dolor.
-	Amet sint excepturi ipsam nihil id eos libero autem, quae enim ab ex at a officia. Libero eos ut quam, aperiam minus, praesentium facilis consectetur at ad quae amet architecto?
-	Sint rem odio distinctio reprehenderit consequatur nulla ipsa facilis, incidunt earum voluptatibus eum, cumque sed! Minus, nihil distinctio commodi excepturi, debitis aliquid cum asperiores quibusdam tempora doloremque cupiditate laborum tempore.
-	Perferendis corporis sunt sed aperiam laudantium molestiae iure. Consectetur dolore ipsa vel molestias in magnam possimus. Quam, nam cum eaque sequi consectetur culpa. Suscipit, quam fugit quas labore praesentium at?
-	Cumque sapiente omnis inventore, ea hic ad eveniet minus ut tempore, reiciendis recusandae. Sequi blanditiis odit earum quos aperiam obcaecati maxime voluptate velit, sunt, reprehenderit modi magni delectus asperiores eos?
-	Consequatur qui labore minima? Tempore adipisci, inventore dolorem eaque nobis excepturi dolor illum, delectus soluta suscipit vel et, dolore voluptates a vitae magni minus facilis maxime iste modi enim iure?
-	Itaque deserunt, quidem magni voluptatibus totam repellendus sint soluta debitis deleniti accusantium nihil voluptas sit veritatis ipsum, ducimus earum molestiae ea id atque eligendi. Magnam dolore sequi hic. Accusamus, maxime!
-	Praesentium, debitis quod obcaecati earum error laborum modi, nesciunt tenetur doloremque corporis suscipit necessitatibus soluta temporibus blanditiis rem mollitia sequi excepturi, ratione sapiente aliquam harum! Doloremque quas nulla eos totam.
-	Esse iusto totam recusandae sapiente ex? Minima deleniti neque vero totam ipsam dignissimos veniam repudiandae, eum natus fugiat maiores expedita a ipsa, quo voluptatum explicabo, consectetur similique aliquam maxime sunt.
-	Modi ut, quos culpa cupiditate velit suscipit delectus vero mollitia molestiae, ea sunt ipsa, sint minima? Nostrum est pariatur repudiandae aliquam, nulla consequuntur provident illum, adipisci aspernatur deserunt perspiciatis totam.
-	Aliquid velit eaque perferendis optio adipisci voluptatem perspiciatis ut, saepe repellendus distinctio. Nisi, dolor sapiente pariatur quae totam corporis, perferendis quos molestiae vero dignissimos id explicabo! Repellat itaque esse necessitatibus.
-	Earum vel, dolor ducimus doloribus facere impedit? Cumque hic culpa quaerat porro, numquam voluptate at excepturi, repellendus quidem architecto ex, veritatis unde ratione natus ipsam? Porro, iure voluptatibus. Necessitatibus, provident.
-	Reprehenderit saepe vel, laudantium placeat sed fugit maiores ipsam numquam voluptatem a corrupti dolore, beatae incidunt. Placeat ducimus fugit, temporibus, suscipit quasi perspiciatis vitae commodi a eum, magni minus repellat.
-	Blanditiis rerum nulla aut quaerat qui, nobis ad exercitationem asperiores? Praesentium autem omnis quis rem nostrum, vero ducimus veritatis non, illum et harum perferendis! Quo eos libero saepe eum voluptatibus.
-	Tenetur quod fuga eos quaerat, molestias consequuntur quas possimus consectetur ab enim minus asperiores illum a eius cupiditate quia dolorum accusamus voluptas at voluptate laudantium neque? Reiciendis pariatur iste deleniti!
-	Quo at veniam eius molestiae delectus sequi qui repellendus, eum voluptates, tempore accusamus ipsa, culpa officia libero suscipit reiciendis minus dolore dolorum numquam saepe odit! Quos quidem dicta rem libero.
-	Vero nobis aut, reprehenderit nisi quae nostrum amet similique unde autem at ipsa quasi asperiores, iste accusamus itaque vel optio. Atque magnam unde consequuntur eos perspiciatis quod quasi delectus fugiat.
-	Explicabo voluptate, voluptatibus aut, neque sit quas vitae minima consequatur corporis, ipsam quidem! Possimus explicabo temporibus culpa alias similique nesciunt blanditiis eveniet accusamus molestiae corporis commodi, maxime assumenda cupiditate et!
-	Consequatur iste expedita atque possimus omnis voluptates, architecto quidem obcaecati, assumenda, fugiat reprehenderit! Harum cum aliquam non. Suscipit omnis laudantium modi voluptas aut eum doloremque, enim ipsam assumenda deleniti quasi.
-	Obcaecati, pariatur recusandae? Ex vel illum, nam quasi et harum soluta totam facilis laborum nulla fugit rerum est assumenda debitis voluptate neque ea omnis architecto dolores! Saepe quia id esse.
-	Corrupti totam reiciendis laborum reprehenderit ducimus animi voluptate dolorum! Minima, ea officia aperiam enim sit quibusdam, beatae est mollitia in nesciunt eveniet aspernatur aliquam exercitationem tempora praesentium animi quaerat repellat.
-	Tenetur repellendus a ab eos qui, doloribus adipisci tempore odio voluptate sapiente sit quisquam impedit. Voluptates omnis corporis laudantium, nemo reprehenderit magni eos pariatur doloremque consequatur, praesentium beatae vitae nostrum.
-	Molestiae libero minima cupiditate, nisi quaerat facere quas optio ratione ipsa temporibus consequuntur, odio, facilis ipsam repellendus asperiores? Pariatur aliquam dolor molestias est maiores. Alias hic doloribus ut eveniet ipsam.
-	Cum soluta recusandae quod, fugit saepe itaque? Dignissimos perspiciatis minima alias odit libero ipsam repudiandae quidem fuga porro deserunt sit, iure dolores doloribus, omnis odio, amet eius! Excepturi, alias quisquam?
-	Magni soluta, aliquam adipisci molestias, quidem suscipit eligendi necessitatibus excepturi tempora totam perspiciatis nulla nisi laborum ipsum ducimus quasi eveniet autem cumque quae. Ad non, dignissimos delectus architecto quidem ipsa!
-	Tempora excepturi fugit minus quaerat dignissimos neque error omnis dolor ut veniam! Saepe doloremque commodi eius dicta quisquam inventore magni aut voluptate ipsam, quas adipisci hic dolores et officia eos.
-	Adipisci cum autem deserunt magnam impedit consequatur temporibus illo iste, deleniti quae expedita quisquam cumque incidunt veniam consectetur, odio illum nulla nesciunt repellat eveniet reprehenderit perspiciatis sapiente dolorem. Dolorum, iusto!
-	Deserunt autem minima est veritatis soluta molestias fuga sint, alias tempora facilis ullam laudantium quas nostrum doloremque iure eaque quasi at tenetur temporibus. Consectetur harum magnam, culpa quidem veniam aliquid?
-	Saepe impedit quo beatae, quas, perspiciatis officia debitis quaerat fuga numquam sed asperiores cum. Praesentium autem vel optio dolore numquam eveniet impedit nihil totam, enim fuga, nesciunt in, consectetur temporibus!
-	Obcaecati iure consequatur quaerat nulla, repellendus officiis nemo quae suscipit quo in aliquam est minus culpa excepturi a cum sit eos ullam ipsum neque esse ratione. Rerum mollitia aperiam illum!
-	Labore perferendis, delectus ducimus ullam dignissimos dolores earum nisi omnis quis. Recusandae sed est, laboriosam reiciendis illum esse. Ratione eius illum, reiciendis incidunt libero velit blanditiis repudiandae officiis cumque voluptate.
-	Aliquid nemo minus officia! Ut autem deleniti perspiciatis qui porro voluptatum? Autem perferendis dolore culpa provident eius in corrupti, aspernatur cupiditate vero, magnam suscipit dolores distinctio modi fugit, quae blanditiis.
-	Rerum voluptas quis atque officiis quidem molestias voluptate esse aperiam pariatur eius ea laudantium nihil sed consequuntur soluta quae, quisquam sit exercitationem recusandae quasi, fuga, animi perferendis officia? Praesentium, repellat?
-	Possimus, assumenda corporis minus vitae enim illum nisi autem error commodi sed excepturi dolorem illo cum dolorum consequuntur praesentium facilis magnam dicta. Ad nesciunt sit velit dolore temporibus omnis amet!
-	Vitae, veritatis velit. Reprehenderit aspernatur iusto accusamus quasi sed illo repellendus ratione temporibus, necessitatibus velit molestiae, architecto officiis ducimus iure eos nesciunt amet dignissimos. Similique ad recusandae ipsum odio obcaecati!
-	Quasi, unde. Doloribus deleniti explicabo dolore in fugiat expedita unde labore, alias tempore. Nemo ab quisquam minus at impedit, quaerat deleniti voluptatum dicta quibusdam recusandae veritatis odio illum dolorum cupiditate.
-	Neque, incidunt nobis? Dolores, earum quia sunt quae vitae ipsa! Ea ipsa nostrum natus. Dolor numquam aliquam quae natus id quis ipsa suscipit ullam et in, provident dolorem, sequi eum.
-	Cum assumenda voluptatum laboriosam pariatur recusandae amet ducimus. Ut, autem recusandae error amet at optio veniam in exercitationem ex quasi dolor cumque blanditiis commodi laborum minima earum molestias, beatae voluptas!
-	Culpa beatae sapiente doloremque deserunt ratione. Culpa, voluptatibus pariatur? Nisi maiores optio, expedita tempore temporibus voluptates perspiciatis, quaerat et voluptatem in animi necessitatibus. Consequatur dolorem sequi fugiat repudiandae vero ullam?
-	Amet architecto adipisci, harum aliquid ad placeat, culpa dicta possimus rem doloribus esse! Enim dolore dolorem, ullam maxime, saepe consectetur consequatur voluptatibus laudantium natus, ratione aperiam libero rerum iusto vel?
-	Illo sapiente labore molestias numquam laboriosam velit soluta perspiciatis, sunt excepturi iste atque! Ratione incidunt, minima fuga ducimus dignissimos recusandae quisquam vero. Enim officia reiciendis numquam harum cum deleniti repellat.
-	Suscipit temporibus voluptatum exercitationem labore alias illo qui eos dolorem pariatur voluptates adipisci corrupti, reprehenderit ullam distinctio a odio, ut autem soluta accusantium inventore delectus! Iste voluptatem perferendis aperiam voluptatum.
-	Optio laboriosam nulla voluptas sed. Corrupti libero iste tenetur veritatis placeat assumenda illo pariatur vel, doloribus dolorem vitae aut enim voluptatibus ipsum quia. Unde accusamus voluptatum ad enim sit qui.
-	Ad adipisci maiores enim, tenetur quia nam aut. Illum autem recusandae magnam, sed minus corporis neque, velit illo accusantium necessitatibus non nulla tenetur cupiditate expedita labore. Necessitatibus, reprehenderit fugit! Laudantium.
-	Quibusdam repellendus quod delectus consequuntur nulla blanditiis ipsa autem, atque sequi, ea vero maxime iusto velit! Impedit, vel iure officia rerum recusandae incidunt! Nihil neque provident fugit, aliquid beatae itaque!
-	Ad molestias totam quis sunt voluptatum adipisci repellendus fugit cum minus quasi labore expedita doloribus debitis, repudiandae fugiat corrupti harum molestiae numquam quo dolorem dicta illum tempora eius iure? A.</p>
+<div class="containerAll">
+	<h1 class="favTitle">Pelis más vistas</h1>
+	<span class="material-icons star">star_outline</span>
+	<!-- Swiper -->
+	<div class="netflix-carousel">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					{{#with row1}}
+					<a href="/pelicula?nombre_pelicula={{nombre_pelicula}}" id="nombre_pelicula" class="linkSwiper"
+						data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">
+						<div class="containerSwiper">
+							<img class="image" src="{{ruta_img}}" alt="">
+							<div class="middle">
+								<span class="material-icons eyeSwiper">remove_red_eye</span>
+								<p class="textoSwiper">{{numero_vistas}}</p>
+								<div class="text">{{nombre_pelicula}}</div>
+							</div>
+						</div>
+					</a>
+					{{/with}}
+				</div>
+				<div class="swiper-slide">
+					{{#with row2}}
+					<a href="/pelicula?nombre_pelicula={{nombre_pelicula}}" id="nombre_pelicula" class="linkSwiper"
+						data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">
+						<div class="containerSwiper">
+							<img class="image" src="{{ruta_img}}" alt="">
+							<div class="middle">
+								<span class="material-icons eyeSwiper">remove_red_eye</span>
+								<p class="textoSwiper">{{numero_vistas}}</p>
+								<div class="text">{{nombre_pelicula}}</div>
+							</div>
+						</div>
+					</a>
+					{{/with}}
+				</div>
+				<div class="swiper-slide">
+					{{#with row3}}
+					<a href="/pelicula?nombre_pelicula={{nombre_pelicula}}" id="nombre_pelicula" class="linkSwiper"
+						data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">
+						<div class="containerSwiper">
+							<img class="image" src="{{ruta_img}}" alt="">
+							<div class="middle">
+								<span class="material-icons eyeSwiper">remove_red_eye</span>
+								<p class="textoSwiper">{{numero_vistas}}</p>
+								<div class="text">{{nombre_pelicula}}</div>
+							</div>
+						</div>
+					</a>
+					{{/with}}
+				</div>
+				<div class="swiper-slide">
+					{{#with row4}}
+					<a href="/pelicula?nombre_pelicula={{nombre_pelicula}}" id="nombre_pelicula" class="linkSwiper"
+						data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">
+						<div class="containerSwiper">
+							<img class="image" src="{{ruta_img}}" alt="">
+							<div class="middle">
+								<span class="material-icons eyeSwiper">remove_red_eye</span>
+								<p class="textoSwiper">{{numero_vistas}}</p>
+								<div class="text">{{nombre_pelicula}}</div>
+							</div>
+						</div>
+					</a>
+					{{/with}}
+				</div>
+				<div class="swiper-slide">
+					{{#with row5}}
+					<a href="/pelicula?nombre_pelicula={{nombre_pelicula}}" id="nombre_pelicula" class="linkSwiper"
+						data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">
+						<div class="containerSwiper">
+							<img class="image" src="{{ruta_img}}" alt="">
+							<div class="middle">
+								<span class="material-icons eyeSwiper">remove_red_eye</span>
+								<p class="textoSwiper">{{numero_vistas}}</p>
+								<div class="text">{{nombre_pelicula}}</div>
+							</div>
+						</div>
+					</a>
+					{{/with}}
+				</div>
+				<div class="swiper-slide">
+					{{#with row6}}
+					<a href="/pelicula?nombre_pelicula={{nombre_pelicula}}" id="nombre_pelicula" class="linkSwiper"
+						data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">
+						<div class="containerSwiper">
+							<img class="image" src="{{ruta_img}}" alt="">
+							<div class="middle">
+								<span class="material-icons eyeSwiper">remove_red_eye</span>
+								<p class="textoSwiper">{{numero_vistas}}</p>
+								<div class="text">{{nombre_pelicula}}</div>
+							</div>
+						</div>
+					</a>
+					{{/with}}
+				</div>
+				<div class="swiper-slide">
+					{{#with row7}}
+					<a href="/pelicula?nombre_pelicula={{nombre_pelicula}}" id="nombre_pelicula" class="linkSwiper"
+						data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">
+						<div class="containerSwiper">
+							<img class="image" src="{{ruta_img}}" alt="">
+							<div class="middle">
+								<span class="material-icons eyeSwiper">remove_red_eye</span>
+								<p class="textoSwiper">{{numero_vistas}}</p>
+								<div class="text">{{nombre_pelicula}}</div>
+							</div>
+						</div>
+					</a>
+					{{/with}}
+				</div>
+				<div class="swiper-slide">
+					{{#with row8}}
+					<a href="/pelicula?nombre_pelicula={{nombre_pelicula}}" id="nombre_pelicula" class="linkSwiper"
+						data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">
+						<div class="containerSwiper">
+							<img class="image" src="{{ruta_img}}" alt="">
+							<div class="middle">
+								<span class="material-icons eyeSwiper">remove_red_eye</span>
+								<p class="textoSwiper">{{numero_vistas}}</p>
+								<div class="text">{{nombre_pelicula}}</div>
+							</div>
+						</div>
+					</a>
+					{{/with}}
+				</div>
+				<div class="swiper-slide">
+					{{#with row9}}
+					<a href="/pelicula?nombre_pelicula={{nombre_pelicula}}" id="nombre_pelicula" class="linkSwiper"
+						data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">
+						<div class="containerSwiper">
+							<img class="image" src="{{ruta_img}}" alt="">
+							<div class="middle">
+								<span class="material-icons eyeSwiper">remove_red_eye</span>
+								<p class="textoSwiper">{{numero_vistas}}</p>
+								<div class="text">{{nombre_pelicula}}</div>
+							</div>
+						</div>
+					</a>
+					{{/with}}
+				</div>
+				<div class="swiper-slide">
+					{{#with row10}}
+					<a href="/pelicula?nombre_pelicula={{nombre_pelicula}}" id="nombre_pelicula" class="linkSwiper"
+						data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">
+						<div class="containerSwiper">
+							<img class="image" src="{{ruta_img}}" alt="">
+							<div class="middle">
+								<span class="material-icons eyeSwiper">remove_red_eye</span>
+								<p class="textoSwiper">{{numero_vistas}}</p>
+								<div class="text">{{nombre_pelicula}}</div>
+							</div>
+						</div>
+					</a>
+					{{/with}}
+				</div>
+			</div>
+			<!-- Add Pagination -->
+			<div class="swiper-pagination"></div>
+		</div>
+	</div>
+
+	<div class="todasLasPelis">
+		<img src="https://image.tmdb.org/t/p/original/b0Sokh7DazDAxGOpt0ln9soTTET.jpg" data-parallax='{"y": 230}' alt="">
+	</div>
+
+	<div class="container">
+		<div class="card-deck">
+			{{#each all}}
+			<div class="card">
+
+				<div class="card-body text-center">
+					<a href="/pelicula?nombre_pelicula={{nombre_pelicula}}" id="nombre_pelicula" class="linkSwiper"
+						data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">
+						<div class="containerSwiper">
+							<img class="image" src="{{ruta_img}}" alt="">
+							<div class="middle">
+								<span class="material-icons eyeSwiper">remove_red_eye</span>
+								<p class="textoSwiper">{{numero_vistas}}</p>
+								<div class="text">{{nombre_pelicula}}</div>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+
 </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 <script>
-	var socket = io.connect('http://localhost:8080/');
+	var socket = io.connect('http://192.168.0.12:8080/');
 
-	socket.on('counter', function(data) {
-		console.log(data);
+	socket.on('counter', function (data) {
+		console.log('Usuarios en linea :', data.count);
 		socket.emit($('#counter').text(data.count));
 	})
 </script>

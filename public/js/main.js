@@ -68,3 +68,39 @@ $(document).keyup(function(e) {
      icon.style.display = "block";
  }
 });
+
+
+
+
+if($(window).width() <= 600){
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    freeMode: true,
+    pagination: {
+      clickable: true,
+    },
+  });
+
+  } else if ($(window).width() <= 1300 && $(window).width() > 600) {
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 5,
+      spaceBetween: 30,
+      freeMode: true,
+      pagination: {
+        clickable: true,
+      },
+    });
+    
+  } else {
+
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 9,
+      spaceBetween: 30,
+      freeMode: true,
+      pagination: {
+        clickable: true,
+      },
+    });
+  }
+

@@ -8,7 +8,8 @@ if (process.env.JAWSDB_URL) {
     host: 'localhost',
     user: 'root',
     password: 'loquendo_1',
-    database: 'mypelis_db'
+    database: 'mypelis_db',
+    multipleStatements: true
 });
 
 }

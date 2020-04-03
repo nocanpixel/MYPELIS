@@ -2,27 +2,33 @@ const express = require('express');
 const router = express.Router();
 
 const orm = require('../config/orm');
+const connection = require('../config/connection');
 
 router.get('/', function(req, res,next) {
-    orm.selectAll(function(error, pelicula) {
-        if (error) {
-            return res.status(501).json({
-                message: 'Not able to query the database'
-            });
-        }
-        //console.log(pelicula[1]);
-        res.render('index', { 
-            row1:pelicula[0],
-            row2:pelicula[1],
-            row3:pelicula[2],
-             style: 'main'});
+    connection.query('SELECT * FROM libreria ORDER BY id_pelicula DESC;SELECT * FROM libreria ORDER BY numero_vistas DESC', function (error, results, fields) {
+        if (error) throw error;
+        //console.log(results[0][0]);
+        res.render('index', {
+            row1:results[1][0],
+            row2:results[1][1],
+            row3:results[1][2],
+            row4:results[1][3],
+            row5:results[1][4],
+            row6:results[1][5],
+            row7:results[1][6],
+            row8:results[1][7],
+            row9:results[1][8],
+            row10:results[1][9],
+            all:results[0],
+            style:'main'});
     });
 });
 
+
 router.get('/pelicula', (req, res) => {
-    var id_pelicula = req.query.id;
-    console.log('id_pelicula:',id_pelicula);
-    orm.selectAllBy(id_pelicula,function(err, pelicula) {
+    var nombre_pelicula = req.query.nombre_pelicula;
+    console.log('id_pelicula:',nombre_pelicula);
+    orm.selectAllBy(nombre_pelicula,function(err, pelicula) {
         if (err) {
             return res.status(501).json({
                 message: 'Not able to query the database'
@@ -32,7 +38,7 @@ router.get('/pelicula', (req, res) => {
     });
 });
 
-router.put("/:id_pelicula/:condition", function (req, res) {
+router.put("/pelicula/:id_pelicula/:condition", function (req, res) {
     const id_pelicula = req.params.id_pelicula;
     const condition = req.params.condition;
     console.log('id:',id_pelicula,'value:',condition);
