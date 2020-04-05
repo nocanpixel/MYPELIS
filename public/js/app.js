@@ -1,12 +1,3 @@
-const works = (pelicula) => {
-    const id_pelicula = pelicula.id_pelicula; 
-    console.log('working');
-};
-const worksError = (pelicula) => {
-    console.log('Error');
-};
-
-
 $(document).on('click', '#nombre_pelicula', function() {
     const id_pelicula = $(this).attr('data-id');
 

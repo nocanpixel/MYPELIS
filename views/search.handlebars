@@ -1,0 +1,26 @@
+{{> handler}}
+
+
+
+	<div class="container">
+		<div class="card-deck">
+			{{#each res}}
+			<div class="card">
+
+				<div class="card-body text-center">
+					<a href="/pelicula?nombre_pelicula={{nombre_pelicula}}" id="nombre_pelicula" class="linkSwiper"
+						data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">
+						<div class="containerSwiper">
+							<img class="image" src="{{ruta_img}}" alt="">
+							<div class="middle">
+								<span class="material-icons eyeSwiper">remove_red_eye</span>
+								<p class="textoSwiper">{{numero_vistas}}</p>
+								<div class="text">{{nombre_pelicula}}</div>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>

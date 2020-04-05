@@ -15,10 +15,15 @@ html, body {
 
 /* NAV BAR */
 
-
-.logo a {
-  background: transparent;
+.logo img {
+  margin-top: 10px;
 }
+
+#myBtn {
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+
 /* HEADER ***************** 
 
 //////*
@@ -30,6 +35,8 @@ html, body {
   top: 0;
   width: 100%;
   z-index: 10;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .containerH {
@@ -97,13 +104,6 @@ html, body {
   border: none;
 }
 
-.closeC {
-  position: absolute;
-  left: 88%;
-  top: 30%;
-  cursor: pointer;
-}
-
 .modal-content input[type=text] {
   /* Remove First */
   -webkit-appearance: none;
@@ -116,14 +116,10 @@ html, body {
   color: white;
   padding: 10px;
   padding-left: 30px;
-  border: 2px white solid;
   font-size: 20px;
   font-weight: lighter;
 }
 
-.modal-content input[type=text]:focus {
-  border: 2px solid #ff942a;
-}
 
 button {
   border: none;
@@ -292,9 +288,9 @@ button:focus {
 ------------------------------ GALLERY IMAGES
 */
 
+
 .favTitle {
   font-size: 40px;
-  padding-left: 15px;
   float: left;
 }
 .star {
@@ -408,6 +404,13 @@ button:focus {
 -------------------- ALL IMAGE CESS
 */
 
+.emotePelis {
+  float: right;
+  margin-top: -95px;
+  font-size: 50px;
+}
+
+
 .card-deck {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -435,6 +438,10 @@ button:focus {
   background: none;
 }
 
+/*
+--------------------------------- 404 #
+*/
+
 @media only screen and (min-width: 100em) {
   .containerAll {
     max-width: 1700px;
@@ -460,52 +467,79 @@ button:focus {
 .todasLasPelis {
   width: 100%;
   margin-top: 20px;
-  height: 300px;
+  height: auto;
+  padding: 15px;
 
-  position: relative;
-  overflow: hidden;
+
+  background: -moz-linear-gradient(90deg, rgba(189,0,0,1) 0%, rgba(170,1,1,1) 50%, rgba(108,0,0,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(189,0,0,1) 0%, rgba(170,1,1,1) 50%, rgba(108,0,0,1) 100%);
+  background: linear-gradient(90deg, rgba(189,0,0,1) 0%, rgba(170,1,1,1) 50%, rgba(108,0,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bd0000",endColorstr="#6c0000",GradientType=1);
+  
 }
 .todasLasPelis .textTodasLasPelis {
   font-size: 40px;
-  margin-bottom: -5px;
+  text-shadow: 3px 3px 3px black;
+
 }
-/*
+
 .todasLasPelis .text1TodasLasPelis {
-  width: 500px;
-  font-size: 14px;
-}*/
-
-.todasLasPelis img {
-  position: absolute;
-  object-fit:cover;
-  object-position: 50% 10%;
-  width: 100%;
-  bottom: -1100px;
-  left: 0;
-
-  -webkit-mask-image: -webkit-linear-gradient(white 20%, transparent 99%);
-  filter: brightness(90%);
+  width: 700px;
+  font-size: 15px;
+  text-shadow: 3px 3px 3px black;
 }
 
+
+
+
+
+
+
+
+/*
+----
+*/
+
+.pideP {
+  position: absolute;
+  z-index: 30;
+  top: 150px;
+  right: 0px;
+  margin-right: 120px;
+  padding: 10px 30px 10px 30px;
+  background: #9c27b0;
+  color: white;
+  font-weight: bolder;
+}
+
+.pideP:hover{
+  color: black;
+  background: #d05ce3;
+}
 @media (max-width: 600px) {
 
   .star {
     margin-top: 30px;
   }
 
+  .logo img {
+    width: 150px;
+  }
+
+  .textTodasLasPelis a img{
+    width: 200px;
+  }
+
   .card-deck {
     margin: 9px;
   }
-  .todasLasPelis{
-    height: 150px;
-  }
-  .todasLasPelis img{
-  bottom: -100px;
-  padding: 15px;
+  .todasLasPelis .text1TodasLasPelis{
+    width: auto;
   }
   .favTitle{
     font-size: 25px;
     margin-top: 30px;
+    margin-bottom: 10px;
   }
 
   .containerAll img{
@@ -525,8 +559,10 @@ button:focus {
     transform: translate(-50%,-50%);
     width: max-content;
     box-sizing: border-box;
-    z-index: 990;
+    z-index: 20;
   }
+
+
   .searchIco {
     margin-top: 10px;
   }
@@ -536,7 +572,8 @@ button:focus {
     background: transparent;
     margin: initial;
     border-radius: 0px;
-    border: 2px solid red;
+    background: black;
+    border: none;
     padding-left: 40px;
     font-size: 17px;
   }

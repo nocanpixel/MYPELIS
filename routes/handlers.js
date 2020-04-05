@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const url = require('url');
 
 const orm = require('../config/orm');
 const connection = require('../config/connection');
 
 router.get('/', function(req, res,next) {
-    connection.query('SELECT * FROM libreria ORDER BY id_pelicula DESC;SELECT * FROM libreria ORDER BY numero_vistas DESC', function (error, results, fields) {
+    connection.query('SELECT * FROM libreria ORDER BY id_pelicula DESC LIMIT 20;SELECT * FROM libreria ORDER BY numero_vistas DESC', function (error, results, fields) {
         if (error) throw error;
         //console.log(results[0][0]);
         res.render('index', {
@@ -24,17 +25,32 @@ router.get('/', function(req, res,next) {
     });
 });
 
+router.get('/search', (req, res) => {
+    var nombre_pelicula = req.query.nombre_pelicula;
+    console.log('nombre : ', nombre_pelicula);
+    connection.query(`SELECT * FROM libreria WHERE nombre_pelicula LIKE '%${nombre_pelicula}%'`, function(error, result, fields) {
+        if (error) throw error;
+        if(!result.length) {
+            var empty = !result.length;
+            res.render('404', {style: 'search'});
+        } else {
+            res.render('search', {
+                res:result,
+            style: 'search'});
+        }
+    });
+});
 
 router.get('/pelicula', (req, res) => {
     var nombre_pelicula = req.query.nombre_pelicula;
-    console.log('id_pelicula:',nombre_pelicula);
+    console.log('NOMBRE_PELICULA :',nombre_pelicula);
     orm.selectAllBy(nombre_pelicula,function(err, pelicula) {
         if (err) {
             return res.status(501).json({
                 message: 'Not able to query the database'
             });
         }
-        res.render('pelicula', {pelicula:pelicula, style: 'main'});
+        res.render('pelicula', {pelicula:pelicula, style: 'pelicula'});
     });
 });
 

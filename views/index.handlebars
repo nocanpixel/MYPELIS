@@ -5,6 +5,7 @@
 		<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 		<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 	</ol>
+
 	<div class="carousel-inner">
 		<div class="carousel-item active">
 			{{#with row1}}
@@ -14,6 +15,7 @@
 
 			<div class="contentD">
 				<div class="containerContent">
+
 					<div class="descripcion">
 						{{#with row1}}
 						<h1 class="title">{{nombre_pelicula}}</h1>
@@ -255,7 +257,9 @@
 	</div>
 
 	<div class="todasLasPelis">
-		<img src="https://image.tmdb.org/t/p/original/b0Sokh7DazDAxGOpt0ln9soTTET.jpg" data-parallax='{"y": 230}' alt="">
+		<p class="textTodasLasPelis"><a href="/"><img src="/img/logo.png" alt="discord-logo-font" border="0"></a></p>
+		<p class="text1TodasLasPelis">Mypelis es un sitio especial en el que podrás ver las peliculas más actuales por temporada actualizamos pelis cada semana. Estando en MYPELIS tendrás la mejor experiencia.</p>
+
 	</div>
 
 	<div class="container">
@@ -267,7 +271,7 @@
 					<a href="/pelicula?nombre_pelicula={{nombre_pelicula}}" id="nombre_pelicula" class="linkSwiper"
 						data-id="{{id_pelicula}}" data-state="{{numero_vistas}}">
 						<div class="containerSwiper">
-							<img class="image" src="{{ruta_img}}" alt="">
+							<img class="image" loading="lazy" src="{{ruta_img}}" alt="">
 							<div class="middle">
 								<span class="material-icons eyeSwiper">remove_red_eye</span>
 								<p class="textoSwiper">{{numero_vistas}}</p>

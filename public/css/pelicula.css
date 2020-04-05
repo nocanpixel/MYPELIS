@@ -1,0 +1,23 @@
+.pelicula {
+    height: 100vh;
+}
+
+.logoPelicula {
+    position: absolute;
+    padding: 20px;
+    padding-top: 32px;
+    right: 0;
+}
+
+.back {
+    position: absolute;
+    padding: 20px;
+    font-size: 50px;
+}
+
+@media (max-width: 600px) {
+
+    .logoPelicula{
+        width: 150px;
+    }
+}

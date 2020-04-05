@@ -1,0 +1,28 @@
+.container {
+    padding-top: 90px;
+}
+
+.headerP{
+    background: black;
+}
+
+
+/* CSS FROM 404 */
+
+.volverI {
+    color: white;
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -80%);
+        text-align:center;
+        padding: 10px 30px 10px 30px;
+        font-weight: bolder;
+        background: linear-gradient(to left, #303f9f, #666ad1);
+        letter-spacing: 4px;
+}
+
+.volverI:hover {
+    color: black;
+    background: linear-gradient(to left, #7986cb, #aab6fe);
+}

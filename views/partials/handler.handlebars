@@ -1,9 +1,8 @@
     <header id="hd" class="headerP">
         <div class="containerH">
             <div class="logo">
-                <a href="#"><img class="logoFont" src="https://fontmeme.com/permalink/200331/a4ca015c220a8b1fd12ceef5a8edc137.png" alt="discord-logo-font" border="0"></a>
+                <a href="/"><img class="logoFont"  src="/img/logo.png" alt="discord-logo-font" border="0"></a>
             </div>
-
                 <div class="searchIco">
                     <label id="myBtn">
                         <span class="material-icons">search</span>
@@ -15,8 +14,9 @@
                 <!-- Modal content -->
                 <div class="modal-content">
                     <span class="close" style="display: none;">&times;</span>
-                    <input type="text" id="textC" class="search" placeholder="Busca tu pelicula" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Busca tu pelicula'">
-                    <button onclick="clearText();"><span class="closeC material-icons">keyboard_backspace</span></button>
+                    <form method="GET" id="search" action="/search">
+                    <input type="text" name="nombre_pelicula" id="textC" class="search" placeholder="Busca tu pelicula" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Busca tu pelicula'">
+                    </form>
                 </div>
 
                 </div>

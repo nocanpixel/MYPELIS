@@ -16,7 +16,7 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
 //Close when click (x)
-var close = document.getElementsByClassName("closeC")[0];
+//var close = document.getElementsByClassName("closeC")[0];
 
 //Get the Logo element that close when open modal
 var logo = document.getElementsByClassName("logo")[0];
@@ -24,6 +24,13 @@ var logo = document.getElementsByClassName("logo")[0];
 //Get the icon element
 
 var icon = document.getElementsByClassName("material-icons")[0];
+
+
+$(function() {
+  $('#myBtn').click(function() {
+    $('#textC').animate({left:'0'});
+  });
+});
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
@@ -37,10 +44,11 @@ span.onclick = function() {
   modal.style.display = "none";
 }
 
-close.onclick = function() {
+/*close.onclick = function() {
   logo.style.display = "block";
   icon.style.display = "block";
-}
+  back.style.display = "block";
+}*/
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {

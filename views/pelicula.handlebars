@@ -1,12 +1,15 @@
+<div class="pelicula">
 
-{{> handler}}
-
-	  	  	<div class="contentD">
-			<div class="containerContent">
-			<div class="descripcion">
-				{{#each pelicula}}
-                <h1 style="color: white;">{{nombre_pelicula}}</h1>
-				{{/each}}
-			</div>
-		</div>
-	  </div>
+	{{#each pelicula}}
+		<a href="/">
+		<span class="material-icons back">
+		keyboard_backspace
+		</span>
+		</a>
+		<img class="logoPelicula" src="/img/logo.png" alt="">
+	<iframe src="{{ruta_video}}" 
+	scrolling="no" frameborder="0" width="100%" height="100%" allowfullscreen="true" webkitallowfullscreen="true" 
+	mozallowfullscreen="true">
+	</iframe>
+	{{/each}}
+</div>
