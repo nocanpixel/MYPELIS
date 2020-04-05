@@ -490,32 +490,28 @@ button:focus {
 }
 
 
-
-
-
-
-
-
 /*
 ----
 */
 
-.pideP {
-  position: absolute;
-  z-index: 30;
-  top: 150px;
-  right: 0px;
-  margin-right: 120px;
-  padding: 10px 30px 10px 30px;
-  background: #9c27b0;
-  color: white;
-  font-weight: bolder;
+.imbd {
+  margin-top: -7px;
+  margin-left: 10px;
+  float: left;
 }
 
-.pideP:hover{
-  color: black;
-  background: #d05ce3;
+.imdbRatingPlugin {
+  float: left;
 }
+
+.imbd a{
+  color: white;
+}
+
+span.rating{
+  color: #cf0000;
+}
+
 @media (max-width: 600px) {
 
   .star {
