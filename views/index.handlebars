@@ -291,7 +291,7 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 <script>
-	var socket = io.connect('http://192.168.0.12:8080/');
+	var socket = io.connect('https://mypelis.herokuapp.com/');
 
 	socket.on('counter', function (data) {
 		console.log('Usuarios en linea :', data.count);
