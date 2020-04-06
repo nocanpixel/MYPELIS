@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node ."
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -25,8 +24,7 @@
     "http": "0.0.1-security",
     "method-override": "^3.0.0",
     "mysql": "^2.18.1",
-    "path": "^0.12.7",
-    "url": "^0.11.0"
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
