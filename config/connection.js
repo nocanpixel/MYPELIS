@@ -1,13 +1,19 @@
 const mysql = require('mysql');
 
 
-const connection = mysql.createPool({
-    host: 'us-cdbr-iron-east-01.cleardb.net',
-    user: 'b091c9ca29261a',
-    password: '0a9310fa',
-    database: 'heroku_4a2777817a2812a',
+var connection = mysql.createPool({
+    host     : 'localhost',
+    user     : 'root',
+    password : 'loquendo_1',
+    database: 'mypelis_db',
     multipleStatements: true
-});
+
+  });
+
+
+  connection.getConnection(function(err, connection) {
+    if (err) throw err; // not connected!
+  })
 
 
 
@@ -32,5 +38,4 @@ b91c9568152bce:b0f3c3ae
 */
 
 
-connection.connect();
 module.exports = connection;
