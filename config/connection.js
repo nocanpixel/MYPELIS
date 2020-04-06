@@ -5,10 +5,10 @@ if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
  connection = mysql.createConnection({
-    host: 'us-cdbr-iron-east-01.cleardb.net',
-    user: 'b091c9ca29261a',
-    password: '0a9310fa',
-    database: 'heroku_4a2777817a2812a',
+    host: 'localhost',
+    user: 'root',
+    password: 'loquendo_1',
+    database: 'mypelis_db',
     multipleStatements: true
 });
 
