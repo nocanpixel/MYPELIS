@@ -56,7 +56,7 @@ router.get('/pelicula', (req, res) => {
 
 router.put("/pelicula/:id_pelicula/:condition", function (req, res) {
     const id_pelicula = req.params.id_pelicula;
-    const condition = req.params.condition;
+    const condition = parseInt(req.params.condition)+1;
     console.log('id:',id_pelicula,'value:',condition);
     orm.updateOne(condition, id_pelicula, function(err, pelicula) {
         if (err) {

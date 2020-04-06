@@ -11,7 +11,7 @@ const orm = {
     },
 
     updateOne: function(condition, id_pelicula, cb) {
-        const sqlUpdate = `UPDATE libreria SET numero_vistas = '${condition}'+1  WHERE id_pelicula = ${id_pelicula}`;
+        const sqlUpdate = `UPDATE libreria SET numero_vistas = '${condition}'  WHERE id_pelicula = ${id_pelicula}`;
         connection.query(sqlUpdate, function (err, data) {
             if (err) cb(err, null);
                 cb(null, data);
