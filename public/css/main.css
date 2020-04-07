@@ -562,18 +562,17 @@ span.rating{
 .mailer-content {
   width: 700px;
   height: auto;
-  padding: 30px;
   margin: auto;
   margin-top: 1%;
   text-align: center;
 }
 .trending {
-  width: 100%;
+  width: 200px;
+  margin-bottom: 20px;
 }
 
 .mailer-content input{
   padding: 10px;
-  margin: 10px;
   background: #5c7288;
 }
 
@@ -581,9 +580,8 @@ span.rating{
     /* Remove First */
     -webkit-appearance: none;
     -moz-appearance: none;
-    margin: 10px 10px 10px 5.5%;
     appearance: none;
-    width: 88%;
+    width: 50%;
     height: 60px;
     background: #202830;
     color: white;
@@ -593,6 +591,25 @@ span.rating{
     font-weight: lighter;
     border: none;
     border-radius: 8px;
+}
+
+.mailer-content input[type=email] {
+    /* Remove First */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 50%;
+    height: 60px;
+    background: #202830;
+    color: white;
+    padding: 10px;
+    padding-left: 30px;
+    font-size: 20px;
+    font-weight: lighter;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .mailer-content input[type=email] {
@@ -621,13 +638,59 @@ span.rating{
   border-radius: 30px;
   background-color: #5c6bc0;
   color: white;
+  width: 50%;
+  margin-bottom:20px
+}
+
+.mailer-content input[type=submit]:focus {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 2px solid #5c6bc0;
+  outline: none;
+}
+
+.mailer-content input[type=text]:focus {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 2px solid #5c6bc0;
+  outline: none;
+  
+}
+
+.mailer-content input[type=email]:focus {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 2px solid #5c6bc0;
+  outline: none;
 }
 
 .backF {
   display: none;
 }
+.g-recaptcha {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
+}
 
 @media (max-width: 600px) {
+
+  .g-recaptcha {
+    margin-left: 0%;
+  }
+
+  .mailer-content {
+    width: 100%;
+  }
+
+  .mailer-content input[type=text] {
+    width: 100%;
+  }
+  .mailer-content input[type=email] {
+    width: 100%;
+  }
+
 
   .backF {
     display: block;

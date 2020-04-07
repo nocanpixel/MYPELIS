@@ -19,22 +19,22 @@ FORMULARIO DE PETICIONES (PELICULAS)
 $('form').on('submit', (e) => {
     e.preventDefault();
   
-    const text = $('#peticionPeli').val();
-    const email = $('#peticionPeli2').val();
+    const text = document.querySelector('#peticionPeli').value;
+    const email = document.querySelector('#peticionPeli2').value;
+    const captcha = document.querySelector('#g-recaptcha-response').value;
 
-    const data = {
-        email,
-        text
-    }
-
-    $.post("/email", data)
+    fetch('/email', {
+      method: 'POST',
+      headers: {
+        'Accept': 'applicacion/json, text/plain, */*',
+        'Content-type': 'application/json'
+      },
+      body:JSON.stringify({text:text, email:email, captcha:captcha})
+    })
+    .then((res) => res.json())
     .then(() => {
       window.location.href = "/";
     })
-    .catch(() => {
-      window.location.href = "/error";
-    });
-    
   });
 
   /*
