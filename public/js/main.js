@@ -55,7 +55,10 @@ span.onclick = function() {
   icon.style.display = "block";
   back.style.display = "block";
 }*/
+/*
 
+HOLA
+*/
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {

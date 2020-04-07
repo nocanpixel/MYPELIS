@@ -73,7 +73,7 @@ router.put("/pelicula/:id_pelicula/:condition", function (req, res) {
 });
 
 
-// email, subject, text
+// email, subject, text mailer mailer
 router.post('/email', (req, res) => {
     const { email,text } = req.body;
     console.log('Data: ', req.body);

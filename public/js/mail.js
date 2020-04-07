@@ -30,3 +30,7 @@ const sendMail = (email,text, cb) => {
 }
 
 module.exports = sendMail;
+
+/*
+Obviously
+*/
