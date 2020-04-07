@@ -2,13 +2,13 @@ const mysql = require('mysql');
 
 
 var connection = mysql.createPool({
-    host     : 'localhost',
-    user     : 'root',
-    password : 'loquendo_1',
-    database: 'mypelis_db',
-    multipleStatements: true
+  host     : 'us-cdbr-iron-east-01.cleardb.net',
+  user     : 'b091c9ca29261a',
+  password : '0a9310fa',
+  database: 'heroku_4a2777817a2812a',
+  multipleStatements: true
 
-  });
+});
 
 
   connection.getConnection(function(err, connection) {
