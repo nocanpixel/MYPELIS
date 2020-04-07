@@ -30,6 +30,9 @@ html, body {
 /* HEADER *****************
 */
 
+
+
+
 .headerP {
   position: absolute;
   top: 0;
@@ -85,7 +88,7 @@ html, body {
 .themodal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 990; /* Sit on top */
+  z-index: 50; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -130,6 +133,18 @@ button {
   outline: none;
 }
 
+.modalMailer {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 999; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
 
 
 /*//////****************** SLIDER CSS
@@ -274,6 +289,9 @@ button:focus {
   margin-top: 20px;
 }
 
+.carousel-indicators {
+  z-index: 1;
+}
 .carousel .carousel-indicators li {
   border-radius: 0px;
 }
@@ -404,12 +422,6 @@ button:focus {
 -------------------- ALL IMAGE CESS
 */
 
-.emotePelis {
-  float: right;
-  margin-top: -95px;
-  font-size: 50px;
-}
-
 
 .card-deck {
   display: grid;
@@ -508,11 +520,117 @@ button:focus {
   color: white;
 }
 
+
+/*
+----------------- 
+*/
+
+.mailer {
+  position: fixed;
+  display: block;
+  background-color: rgba(108,0,0,1);
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  border-radius: 50%;
+  right: 20px;
+  z-index: 20;
+  bottom: 20px;
+  cursor: pointer;
+}
+
+.mailer:hover {
+  background: rgb(161, 0, 0);
+}
+
+.mailer span{
+  margin-top: 15px;
+}
+.mailer span:hover{
+  color: white;
+}
 span.rating{
   color: #cf0000;
 }
 
+.modalMailer{
+  background: #2b353f;
+}
+
+.mailer-content {
+  width: 700px;
+  height: auto;
+  padding: 30px;
+  margin: auto;
+  margin-top: 1%;
+  text-align: center;
+}
+.trending {
+  width: 100%;
+}
+
+.mailer-content input{
+  padding: 10px;
+  margin: 10px;
+  background: #5c7288;
+}
+
+.mailer-content input[type=text] {
+    /* Remove First */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 10px 10px 10px 5.5%;
+    appearance: none;
+    width: 88%;
+    height: 60px;
+    background: #202830;
+    color: white;
+    padding: 10px;
+    padding-left: 30px;
+    font-size: 20px;
+    font-weight: lighter;
+    border: none;
+    border-radius: 8px;
+}
+
+.mailer-content input[type=submit]{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  width: 100px;
+  border-radius: 30px;
+  background-color: #5c6bc0;
+  color: white;
+}
+
+.backF {
+  display: none;
+}
+
 @media (max-width: 600px) {
+
+  .backF {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 15px;
+    font-size: 50px;
+  }
+  .backF:hover{
+    color: white;
+  }
+
+  .pressesc{
+    display: none;
+  }
+  .mailer-content {
+    width: 100%;
+  }
+
+  .modalMailer{
+    padding: 15px;
+  }
 
   .star {
     margin-top: 30px;
