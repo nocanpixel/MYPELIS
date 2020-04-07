@@ -10,3 +10,33 @@ $(document).on('click', '#nombre_pelicula', function() {
     .then(works)
     .catch(worksError);
 });
+
+
+/*
+FORMULARIO DE PETICIONES (PELICULAS)
+*/
+
+$('form').on('submit', (e) => {
+    e.preventDefault();
+  
+    const text = $('#peticionPeli').val();
+    const email = $('#peticionPeli2').val();
+
+    const data = {
+        email,
+        text
+    }
+
+    $.post("/email", data)
+    .then(() => {
+      window.location.href = "/";
+    })
+    .catch(() => {
+      window.location.href = "/error";
+    });
+    
+  });
+
+  /*
+  hOLA
+  */

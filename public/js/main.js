@@ -8,9 +8,10 @@ $('.carousel').carousel({
 // SEARCHER BUTTON *******************!!!!
 // Get the modal
 var modal = document.getElementById("myModal");
-
+var modalMailer = document.getElementById("modalMailer");
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
+var btnMailer = document.getElementById("mailerButton");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -23,14 +24,19 @@ var logo = document.getElementsByClassName("logo")[0];
 
 //Get the icon element
 
-var icon = document.getElementsByClassName("material-icons")[0];
+var icon = document.getElementsByClassName("search")[0];
 
 
-$(function() {
-  $('#myBtn').click(function() {
-    $('#textC').animate({left:'0'});
-  });
-});
+var peliInput = document.getElementById('peticionPeli');
+var peliInput1 = document.getElementById('peticionPeli2');
+
+
+// When the user clicks the button, open the modal 
+btnMailer.onclick = function() {
+  modalMailer.style.display = "block";
+  logo.style.display = "none";
+  icon.style.display = "none";
+}
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
@@ -49,14 +55,21 @@ span.onclick = function() {
   icon.style.display = "block";
   back.style.display = "block";
 }*/
+/*
+
+HOLA
+*/
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
+  if (event.target == modal || event.target == modalMailer) {
     modal.style.display = "none";
     document.getElementById('textC').value = "";
     logo.style.display = "block";
     icon.style.display = "block";
+    modalMailer.style.display = "none";
+    peliInput.value = "";
+    peliInput1.value = "";
   }
 }
 
@@ -64,6 +77,8 @@ function clearText()
 {
     document.getElementById('textC').value = "";
     modal.style.display = "none";
+    peliInput.value = "";
+    peliInput1.value = "";
     
 } 
 
@@ -74,6 +89,9 @@ $(document).keyup(function(e) {
      document.getElementById('textC').value = "";
      logo.style.display = "block";
      icon.style.display = "block";
+     modalMailer.style.display = "none";
+     peliInput.value = "";
+     peliInput1.value = "";
  }
 });
 
