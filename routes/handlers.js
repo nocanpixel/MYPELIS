@@ -3,6 +3,7 @@ const router = express.Router();
 const url = require('url');
 const sendMail = require('../public/js/mail');
 const { log } = console;
+const request = require('request');
 
 const orm = require('../config/orm');
 const connection = require('../config/connection');
@@ -75,8 +76,45 @@ router.put("/pelicula/:id_pelicula/:condition", function (req, res) {
 
 // email, subject, text mailer mailer
 router.post('/email', (req, res) => {
+
+    if(req.body.captcha === undefined || 
+        req.body.captcha === '' ||
+        req.body.captcha === null){
+            return res.json({"Success": false, "msg":"please sleect captcha"});
+        }
+
+        //Secret key
+        const secretKey = '6Le3hOcUAAAAAJPvXlMlIeK-Rb8qJkZWVuD-HbAJ';
+
+        //Verify URL
+        const VerifyUrl = `https://google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${req.body.captcha}&remoteip=${req.connection.remoteAddress}`;
+
+
+        //Make request to verify 
+
+        request(VerifyUrl,(err, response, body) => {
+            body = JSON.parse(body);
+            
+            if(body.success !== undefined && !body.success) {
+                return res.json({"Success": false, "msg":"Failed captcha"});
+            }
+
+            const { email,text } = req.body;
+            console.log('Data: ', req.body.captcha);
+        
+            sendMail(email,text, function(err, data) {
+                if (err) {
+                    log('ERROR: ', err);
+                    return res.status(500).json({ message: err.message || 'Internal Error' });
+                }
+                log('Email sent!!!');
+                return res.json({ message: 'Email sent!!!!!' });
+            });
+        });
+
+    /*
     const { email,text } = req.body;
-    console.log('Data: ', req.body);
+    console.log('Data: ', req.body.captcha);
 
     sendMail(email,text, function(err, data) {
         if (err) {
@@ -86,6 +124,7 @@ router.post('/email', (req, res) => {
         log('Email sent!!!');
         return res.json({ message: 'Email sent!!!!!' });
     });
+    */
 });
 
 module.exports = router;
