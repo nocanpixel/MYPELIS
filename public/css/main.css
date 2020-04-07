@@ -612,23 +612,6 @@ span.rating{
     margin-bottom: 20px;
 }
 
-.mailer-content input[type=email] {
-  /* Remove First */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  margin: 10px 10px 10px 5.5%;
-  appearance: none;
-  width: 88%;
-  height: 60px;
-  background: #202830;
-  color: white;
-  padding: 10px;
-  padding-left: 30px;
-  font-size: 20px;
-  font-weight: lighter;
-  border: none;
-  border-radius: 8px;
-}
 
 .mailer-content input[type=submit]{
   -webkit-appearance: none;
