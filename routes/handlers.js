@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const url = require('url');
+const sendMail = require('../public/js/mail');
+const { log } = console;
 
 const orm = require('../config/orm');
 const connection = require('../config/connection');
@@ -56,7 +58,7 @@ router.get('/pelicula', (req, res) => {
 
 router.put("/pelicula/:id_pelicula/:condition", function (req, res) {
     const id_pelicula = req.params.id_pelicula;
-    const condition = parseInt(req.params.condition)+1;
+    const condition = req.params.condition;
     console.log('id:',id_pelicula,'value:',condition);
     orm.updateOne(condition, id_pelicula, function(err, pelicula) {
         if (err) {
@@ -67,6 +69,22 @@ router.put("/pelicula/:id_pelicula/:condition", function (req, res) {
         return res.json({
             id_pelicula: id_pelicula
         });
+    });
+});
+
+
+// email, subject, text mailer mailer
+router.post('/email', (req, res) => {
+    const { email,text } = req.body;
+    console.log('Data: ', req.body);
+
+    sendMail(email,text, function(err, data) {
+        if (err) {
+            log('ERROR: ', err);
+            return res.status(500).json({ message: err.message || 'Internal Error' });
+        }
+        log('Email sent!!!');
+        return res.json({ message: 'Email sent!!!!!' });
     });
 });
 
