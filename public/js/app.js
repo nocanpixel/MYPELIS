@@ -1,3 +1,5 @@
+
+
 $(document).on('click', '#nombre_pelicula', function() {
     const id_pelicula = $(this).attr('data-id');
 
@@ -16,7 +18,9 @@ $(document).on('click', '#nombre_pelicula', function() {
 FORMULARIO DE PETICIONES (PELICULAS)
 */
 
-$('form').on('submit', (e) => {
+
+
+$('#formu').on('submit', (e) => {
     e.preventDefault();
   
     const text = document.querySelector('#peticionPeli').value;
