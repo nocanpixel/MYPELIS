@@ -15,7 +15,7 @@ $(document).on('click', '#nombre_pelicula', function() {
 
 
 /*
-FORMULARIO DE PETICIONES (PELICULAS)
+FORMULARIO DE PETICIONES (PELICULAS) -
 */
 
 
