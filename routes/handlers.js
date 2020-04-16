@@ -32,6 +32,8 @@ router.get('/sherlock', function(req,res) {
 router.post('/auth', function(request, response) {
     var username = request.body.username;
     var password = request.body.password;
+    console.log(username);
+    console.log(password);
     if(username && password) {
         connection.query('SELECT * FROM usuarios WHERE user = ? AND password = ?', [username, password], function(error, results, fields) {
             if (results.length > 0) {
