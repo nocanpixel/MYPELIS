@@ -4,7 +4,6 @@ const url = require('url');
 const sendMail = require('../public/js/mail');
 const { log } = console;
 const request = require('request');
-const bodyParser = require('body-parser');
 const orm = require('../config/orm');
 const connection = require('../config/connection');
 
