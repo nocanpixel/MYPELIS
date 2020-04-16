@@ -1,0 +1,28 @@
+<div class="sidenav">
+         <div class="login-main-text">
+            <h2><img src="img/logo.png" alt=""><br> Login Page</h2>
+            <p>Get access to the adminPanel.</p>
+         </div>
+      </div>
+      <div class="main">
+         <div class="col-md-7 col-sm-12">
+            <div class="login-form">
+               <form action="auth" method="POST">
+                   {{#if messages.Error}}
+                   <div class="Error">
+                       {{messages.Error}}
+                   </div>
+                   {{/if}}
+                  <div class="form-group">
+                     <label>Usuario</label>
+                     <input type="text" class="form-control" placeholder="User Name" name="username" required>
+                  </div>
+                  <div class="form-group">
+                     <label>Contraseña</label>
+                     <input type="password" class="form-control" placeholder="Password" name="password" required>
+                  </div>
+                  <button type="submit" class="btn btn-black">Login</button>
+               </form>
+            </div>
+         </div>
+      </div>

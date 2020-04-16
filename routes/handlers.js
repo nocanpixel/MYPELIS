@@ -4,9 +4,61 @@ const url = require('url');
 const sendMail = require('../public/js/mail');
 const { log } = console;
 const request = require('request');
-
+const bodyParser = require('body-parser');
 const orm = require('../config/orm');
 const connection = require('../config/connection');
+
+
+router.get('/logout', function(req,res,next) {
+    if(req.session) {
+        //Delete session object
+        req.session.destroy(function(err) {
+            if(err) {
+                return next(err);
+            } else {
+                return res.redirect('/');
+            }
+        });
+    }
+});
+
+router.get('/sherlock', function(req,res) {
+    if(req.session.loggedin) {
+        res.redirect('/adminPanel');
+    } else {
+        res.render('sherlock', {style:'sherlock'});
+    }
+});
+
+router.post('/auth', function(request, response) {
+    var username = request.body.username;
+    var password = request.body.password;
+    if(username && password) {
+        connection.query('SELECT * FROM usuarios WHERE user = ? AND password = ?', [username, password], function(error, results, fields) {
+            if (results.length > 0) {
+				request.session.loggedin = true;
+				request.session.username = username;
+				response.redirect('/adminPanel');
+			} else {
+                request.flash('Error', 'Wrong password or username');
+                response.redirect('/sherlock');
+			}			
+			response.end();
+        });
+    } else {
+		response.send('Please enter Username and Password!');
+		response.end();
+    }
+});
+
+router.get('/adminPanel', function(request, response) {
+    if (request.session.loggedin) {
+        response.send('Welcome back, ' + request.session.username + '!');
+	} else {
+		response.send('Please login to view this page!');
+	}
+	response.end();
+});
 
 router.get('/', function(req, res,next) {
     connection.query('SELECT * FROM libreria ORDER BY id_pelicula DESC LIMIT 20;SELECT * FROM libreria ORDER BY numero_vistas DESC', function (error, results, fields) {
@@ -39,7 +91,7 @@ router.get('/search', (req, res) => {
         } else {
             res.render('search', {
                 res:result,
-            style: 'search'});
+            style: 'search', main:'main'});
         }
     });
 });
