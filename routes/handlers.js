@@ -87,7 +87,7 @@ router.get('/search', (req, res) => {
         if (error) throw error;
         if(!result.length) {
             var empty = !result.length;
-            res.render('404', {style: 'search'});
+            res.render('404', {style: 'search', main:'main'});
         } else {
             res.render('search', {
                 res:result,
